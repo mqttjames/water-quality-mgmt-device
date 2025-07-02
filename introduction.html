@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+    <style>
+	body {
+            background-color: #E0F7FA; /* Light pastel blue background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            color: #01579B;
+            font-size: 24px;
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 30px 0 10px 0;
+        }
+
+        .button-container {
+            background-color: #B3E5FC; /* Light blue background */
+            border: 2px solid #81D4FA; /* Light blue border */
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px; 
+            font-size: 16px;
+            font-family: Verdana, sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            background-color: #0288D1; /* Medium blue background */
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            display: inline-block; 
+        }
+
+        .button:hover {
+            background-color: #0277BD; /* Darker blue on hover */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E1F5FE; /* Very light blue background */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: left;
+        }
+
+        .dropdown-content a {
+            color: #01579B; /* Dark blue text */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #B3E5FC; /* Light blue on hover */
+        }
+
+        .button:hover .dropdown-content {
+            display: block;
+        }
+
+        .section {
+            margin-bottom: 20px;
+			margin:20px;
+            background-color: #B3E5FC; 
+            border: 2px solid #81D4FA;
+            display: inline-block;
+            padding: 20px;
+			height:485px;
+            border-radius: 5px;
+            text-align: left;
+            vertical-align: top; 
+            width: calc(30.33% - 20px);
+            box-sizing: border-box;
+			transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        h2 {
+            color: #0277BD; 
+            font-size: 30px;
+            font-family: Tahoma, sans-serif;
+			text-align:center;
+            margin-bottom: 10px; /* Adjust margin for h2 */
+        }
+
+        footer {
+            background-color: #B3E5FC; 
+            padding: 10px;
+            text-align: center;
+            margin-top: 20px; 
+        }
+		p {
+            color: #1A5276; 
+            margin: 10px 0;
+        }
+
+        .container {
+            max-width: 1700px;
+            margin: 10px auto;
+            background-color: #FFFFFF;
+			height:609px;
+            padding: 5px;
+            border: 1px solid #81D4FA; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center; 
+        }
+		.section:hover {
+    transform: scale(1.10); 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+	background-color:#E0F7FA;
+}
+       h3{
+			color: #01579B;
+            font-size: 34px;
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 20px 0 10px 0;
+		}
+	</style>
+</head>
+<body>
+    <h1>The Utilization of Date (Phoenix dactylifera) Pits and Raspberry Pi Pico in Making a Water Quality Management Device</h1>
+
+    <div class="section1 button-container">
+        <a href="homepage.html" class="button">Home</a>
+		<a href="about_us.html" class="button">About Us</a>
+        <div class="button">
+            Research
+            <div class="dropdown-content">
+                <a href="introduction.html">Introduction</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="results.html">Results</a>
+                <a href="discussion.html">Discussion</a>
+            </div>
+        </div>
+        <div class="button">
+			Device Data
+			<div class="dropdown-content">
+                <a href="index.html">Real-Time Sensor Data</a>
+                <a href="full_data.html">Data Log</a>
+            </div>
+		</div>
+    </div>
+	
+	
+	<div class="container">
+        <h3>Introduction</h3>
+
+        <div class="section">
+            <h2>Research Problems</h2>
+            <p style='text-align:justify;'>
+			<br>1. The 21st century has witnessed an escalation in the challenges associated with maintaining clean and safe water sources, as highlighted by Sustainable Development Goal (SDG) 6, which emphasizes the crucial need for ensuring universal access to clean water and sanitation.
+			<br><br>2. Qatar faces a critical challenge concerning water quality and scarcity, exacerbated by rapid urbanization, population growth, and environmental stressors.
+			<br><br>3. Moreover, the country grapples with the disposal of Date Palm waste, a byproduct of its thriving agricultural industry. This waste presents both an environmental concern and an untapped resource potential (Hussain et al., 2015).
+			</p>
+        </div>
+
+        <div class="section">
+            <h2>Research Questions</h2>
+            <p style='text-align:justify;'>The objective of this study is to make a Water Quality Management Device out of Date Pits and Raspberry Pi Pico. Specifically, this research aims to answer the following questions:
+
+<br><br>1. How effective is the Water Quality Management Device in terms of contaminant removal?
+<br><br>2. What is the accuracy of the Water Quality Management Device in assessing the water quality in terms of pH level?
+<br><br>3. What is the accuracy of the Water Quality Management Device in assessing the water quality in terms of turbidity?
+<br><br>4. What is the accuracy of the Water Quality Management Device in assessing the water quality in terms of total dissolved solids? 
+</p>
+        </div>
+
+        <div class="section">
+            <h2>Research Hypothesis</h2>
+            <p style='text-align:center;'>H1: It is feasible to make a Water Quality Management Device out of Date Pits and Raspberry Pi Pico.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>All Rights Reserved.</p>
+        <p>&copy; 2024 Water Quality Management System</p>
+    </footer>
+</body>
+</html>

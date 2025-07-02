@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Log</title>
+    <style>
+      body {
+    background-color: #E0F7FA; /* Light pastel blue background */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color: #01579B; /* Dark blue text color */
+    font-size: 24px;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+    padding: 30px 0 10px 0;
+}
+p{
+ color: #1A5276;
+}
+.button-container {
+    background-color: #B3E5FC; /* Light blue background */
+    border: 2px solid #81D4FA; /* Light blue border */
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 10px; 
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: #0288D1; /* Medium blue background */
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block; 
+}
+
+.button:hover {
+    background-color: #0277BD; /* Darker blue on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #E1F5FE; /* Very light blue background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: #01579B; /* Dark blue text */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #B3E5FC; /* Light blue on hover */
+}
+
+.button:hover .dropdown-content {
+    display: block;
+}
+
+.section {
+    margin: 20px 0;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 1800px;
+    margin: 0 auto;
+	height:545px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+footer {
+    background-color: #B3E5FC; /* Light blue background */
+    padding: 10px;
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>The Utilization of Date (Phoenix dactylifera) Pits and Raspberry Pi Pico in Making a Water Quality Management Device</h1>
+
+    <div class="section button-container">
+        <a href="homepage.html" class="button">Home</a>
+        <a href="about_us.html" class="button">About Us</a>
+        <div class="button">
+            Research
+            <div class="dropdown-content">
+                <a href="introduction.html">Introduction</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="results.html">Results</a>
+                <a href="discussion.html">Discussion</a>
+            </div>
+        </div>
+        <div class="button">
+			Device Data
+			<div class="dropdown-content">
+                <a href="index.html">Real-Time Sensor Data</a>
+                <a href="full_data.html">Data Log</a>
+            </div>
+		</div>
+    </div>
+	
+	<div class="container">
+	<h2>Full Data Log</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>pH Level</th>
+                <th>Turbidity</th>
+                <th>TDS</th>
+            </tr>
+        </thead>
+        <tbody id="data-table-body">
+            <!-- Data rows will be inserted here -->
+        </tbody>
+    </table>
+
+	</div>
+	<br><br>
+	
+	<footer>
+        <p>All Rights Reserved.</p>
+        <p>&copy; 2024 Water Quality Management System</p>
+    </footer>
+	
+	
+    <script>
+        async function fetchFullData() {
+            try {
+                const response = await fetch('http://<Raspberry_Pi_IP>/full_data');
+                const data = await response.json();
+                const tableBody = document.getElementById('data-table-body');
+                tableBody.innerHTML = '';  // Clear existing data
+                data.forEach(entry => {
+                    const row = document.createElement('tr');
+                    const date = new Date(entry.timestamp * 1000); // Convert to milliseconds
+                    row.innerHTML = `
+                        <td>${date.toLocaleString()}</td>
+                        <td>${entry.ph.toFixed(2)}</td>
+                        <td>${entry.turbidity.toFixed(2)}</td>
+                        <td>${entry.tds.toFixed(2)}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error fetching full data:', error);
+            }
+        }
+
+        function goToData() {
+            window.location.href = "index.html";
+        }
+		
+		function goToHomePage() {
+            window.location.href = "homepage.html";
+        }
+
+        // Fetch data every minute
+        setInterval(fetchFullData, 60000);
+
+        // Initial fetch
+        fetchFullData();
+    </script>
+</body>
+</html>

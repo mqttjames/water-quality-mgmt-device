@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            background-color: #E0F7FA; /* Light pastel blue background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            color: #01579B; /* Dark blue text color */
+            font-size: 24px;
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 30px 0 10px 0;
+        }
+
+        h2 {
+            margin-top: 20px;
+            font-family: Tahoma, sans-serif;
+            color: #0277BD; /* Slightly lighter dark blue */
+        }
+
+        h4 {
+            color: #01579B; /* Dark blue for subheadings */
+            font-family: Tahoma, sans-serif;
+        }
+
+        .button-container {
+            background-color: #B3E5FC; /* Light blue background */
+            border: 2px solid #81D4FA; /* Light blue border */
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px; 
+            font-size: 16px;
+            font-family: Verdana, sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            background-color: #0288D1; /* Medium blue background */
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            display: inline-block; 
+        }
+
+        .button:hover {
+            background-color: #0277BD; /* Darker blue on hover */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E1F5FE; /* Very light blue background */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: left;
+        }
+
+        .dropdown-content a {
+            color: #01579B; /* Dark blue text */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #B3E5FC; /* Light blue on hover */
+        }
+
+        .button:hover .dropdown-content {
+            display: block;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .slideshow-container {
+            max-width: 800px;
+            position: relative;
+            margin: auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+			background-color: #0288D1;
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #717171;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        footer {
+            background-color: #B3E5FC; /* Light blue background */
+            padding: 10px;
+            text-align: center;
+        }
+		h4{
+			font-size:20px;
+		}
+		.abstract{
+			 max-width: 1200px;
+            margin: 0 auto;
+			text-align:center;
+			vertical-align:middle;
+			font-size:25px;
+		}
+		p{
+			color: #1A5276;
+		}
+    </style>
+</head>
+<body>
+    <h1>The Utilization of Date (Phoenix dactylifera) Pits and Raspberry Pi Pico in Making a Water Quality Management Device</h1>
+
+    <div class="section button-container">
+        <a href="homepage.html" class="button">Home</a>
+        <a href="about_us.html" class="button">About Us</a>
+        <div class="button">
+            Research
+            <div class="dropdown-content">
+                <a href="introduction.html">Introduction</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="results.html">Results</a>
+                <a href="discussion.html">Discussion</a>
+            </div>
+        </div>
+        <div class="button">
+            Device Data
+            <div class="dropdown-content">
+                <a href="index.html">Real-Time Sensor Data</a>
+                <a href="full_data.html">Data Log</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Welcome to the Water Quality Management System!</h2>  
+
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="slide1.jpg" style="width:100%">
+                <div class="text">Caption Text 1</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="slide2.jpg" style="width:100%">
+                <div class="text">Caption Text 2</div>
+            </div>
+            <div class="mySlides fade">
+                <img src="slide3.jpg" style="width:100%">
+                <div class="text">Caption Text 3</div>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+    <h4>Abstract</h4>
+    <p class='abstract' style='text-align:justify'>"Water quality issues persist as a critical global concern, impacting communities, ecosystems, and economies worldwide. The 21st century has witnessed an escalation in the challenges associated with maintaining clean and safe water sources, as highlighted by Sustainable Development Goal (SDG) 6, which emphasizes the crucial need for ensuring universal access to clean water and sanitation. In response to the global challenge of water quality degradation, this study aims to create a Water Quality Management Device utilizing date pits and Raspberry Pi Pico as main components. The date pits, with their antimicrobial potential and high removal efficiencies due to their high surface area and pore volume, make them effective for water filtration technology. Additionally, the Raspberry Pi Pico is a fast and flexible microcontroller board used for controlling other portions of an electronic system and is useful for controlling reading sensors and monitoring tasks. The results of the study proved the effectiveness of the Water Quality Management Device in terms of contaminant removal and accuracy in assessing the water quality in terms of pH level, turbidity, and total dissolved solids (TDS)."</p>
+    <br>
+    <br>
+    
+    <footer>
+        <p>All Rights Reserved.</p>
+        <p>&copy; 2024 Water Quality Management System</p>
+    </footer>
+
+    <script>
+        // JavaScript for slideshow (existing script)
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        var slideInterval = setInterval(function() {
+            plusSlides(1); // Next slide
+        }, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>

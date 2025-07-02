@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+      body {
+    background-color: #E0F7FA; /* Light pastel blue background */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    color: #01579B; /* Dark blue text color */
+    font-size: 24px;
+    font-family: Tahoma, sans-serif;
+    margin: 0;
+    padding: 30px 0 10px 0;
+}
+
+h2 {
+    color: #0277BD; /* Slightly lighter dark blue */
+    font-size: 20px;
+    font-family: Tahoma, sans-serif;
+    margin-bottom: 20px;
+}
+
+.button-container {
+    background-color: #B3E5FC; /* Light blue background */
+    border: 2px solid #81D4FA; /* Light blue border */
+    padding: 10px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 10px; 
+    font-size: 16px;
+    font-family: Verdana, sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    background-color: #0288D1; /* Medium blue background */
+    border: none;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block; 
+}
+
+.button:hover {
+    background-color: #0277BD; /* Darker blue on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #E1F5FE; /* Very light blue background */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left;
+}
+
+.dropdown-content a {
+    color: #01579B; /* Dark blue text */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #B3E5FC; /* Light blue on hover */
+}
+
+.button:hover .dropdown-content {
+    display: block;
+}
+
+.section {
+    margin: 20px 0;
+}
+
+.container {
+    max-width: 1700px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border: 1px solid #81D4FA; 
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.researcher {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 30px;
+    text-align: left; 
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #2980B9;
+}
+
+.researcher img {
+    max-width: 175px; 
+    border-radius: 50%;
+    border: 5px solid #2980B9;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.researcher-info {
+    flex: 1; 
+	text-align:justify;
+}
+
+h3 {
+    margin: 0;
+    padding: 30px 0 10px 0;
+    font-size: 30px;
+    color: #01579B;
+}
+
+p {
+    margin: 5;
+    color: #1A5276;
+}
+
+footer {
+    background-color: #B3E5FC; /* Light blue background */
+    padding: 10px;
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>The Utilization of Date (Phoenix dactylifera) Pits and Raspberry Pi Pico in Making a Water Quality Management Device</h1>
+
+    <div class="section button-container">
+        <a href="homepage.html" class="button">Home</a>
+		<a href="about_us.html" class="button">About Us</a>
+        <div class="button">
+            Research
+            <div class="dropdown-content">
+                <a href="introduction.html">Introduction</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="results.html">Results</a>
+                <a href="discussion.html">Discussion</a>
+            </div>
+        </div>
+        <div class="button">
+			Device Data
+			<div class="dropdown-content">
+                <a href="index.html">Real-Time Sensor Data</a>
+                <a href="full_data.html">Data Log</a>
+            </div>
+		</div>
+    </div>
+	
+	<div class="container">
+        <h3>About Us</h3>
+        
+        <div class="researcher">
+            <img src="researcher1.jpg" alt="Researcher 1">
+            <div class="researcher-info">
+            <h2>Matt James E. Fortes</h2>
+            <p>Student Researcher</p>
+            <p>Matt James E. Fortes is from Caloocan City, Philippines. He was born on March 16, 2006, and has been a consistent academic awardee in Philippine School Doha for 10 consecutive years, graduating as the First Honors of his batch. He is currently a senior in STEM (Science, Technology, Engineering, and Mathematics) student and is the Chief Photojournalist of the school paper known as The Link. He is part of several club organizations and joins various curricular activities in and outside of his school. Notably, he has won Qatar Debate’s ‘Public Speaking Competition’ and was a Grand Finalist in UP Diliman’s Debate Tournament. He believes in the notion that everything happens for a reason, and that reason is God.</p>
+			</div>
+		</div>
+
+        <div class="researcher">
+            <img src="researcher2.jpg" alt="Researcher 2">
+            <div class="researcher-info">
+            <h2>Margaret Isaiah G. Torio</h2>
+            <p>Student Researcher</p>
+            <p>Margaret Isaiah G. Torio is a Senior High School student enrolled PSD (Philippine School Doha) under the STEM strand (Science, Technology, Engineering, and Mathematics) and is the current SSG (Supreme Student Government) Treasurer. Along with maintaining an above 90 general average for all her academic years, she also enjoys joining a diverse set of co- and extracurricular clubs and competitions armed by her motto of “You miss all the shots that you don’t take”. Remarkably, she has won ‘Honorable Delegate’ in DPS Modern Indian School’s MUN 2023 (Model United Nations) and was part of 50 out of 300 teams to advance in Fulbright University’s VBIC 2024 (Vietnam Business Innovation Challenge).</p>
+			</div>
+		</div>
+
+        <div class="researcher">
+            <img src="researcher3.jpg" alt="Researcher 3">
+            <div class="researcher-info">
+            <h2>Sitti Ferdausia R. Laja</h2>
+            <p>Student Researcher</p>
+            <p>Sitti Ferdausia R. Laja  is a Senior High School student in (PSD) Philippine School Doha enrolled in the  STEM (Science, Technology, Engineering, and Mathematics)  strand. She was born on  June 29, 2007, and has been an academic awardee throughout most of her intermediate and high school years.  During the course of her academic journey, she participated in many co curricular activities and joined many organizations in her school. She is an active  member of the DUNONG Academic Guild  and the Qatar Scouts and Guides Association. Remarkably, her team was one of 50 out of 300+ teams to advance in the on-going VBIC 2024 (Vietnam Business Innovation Challenge) hosted by Fulbright University in Vietnam. She stands by the principle that knowing yourself is the beginning of all wisdom.</p>
+			</div>
+		</div>
+		
+		<div class="researcher">
+            <img src="researcher4.jpg" alt="Researcher 4">
+            <div class="researcher-info">
+            <h2>Joaquin Diego M. Lardizabal</h2>
+            <p>Student Researcher</p>
+            <p>Joaquin Diego M. Lardizabal is from Baguio City, Benguet. He is a 17-year-old born on October 2, 2006. He is a senior in the STEM (Science, Technology, Engineering, and Mathematics) strand at the Philippine School Doha. With a proven track record of leadership as a class officer and the Battalion Commander in the Citizenship Advancement Training, he is recognized for his outstanding contributions, earning him the Outstanding Leadership Award for the S.Y. 2022 - 2023. With a passion for STEM and a drive for success, he aims to continue making significant strides in his academic and leadership journey.</p>
+			</div>
+	    </div>
+		
+		<div class="researcher">
+            <img src="researcher5.jpg" alt="Researcher 5">
+            <div class="researcher-info">
+            <h2>Precious Jeineth B. Gomez</h2>
+            <p>Student Researcher</p>
+            <p>Precious Jeineth B. Gomez is currently a senior high school STEM (Science, Technology, Engineering, and Mathematics) student at Philippine School Doha. She was born on April 15, 2007. She spent her elementary days at Philippine School Doha, where she joined various clubs and participated in some extracurricular events. She enjoys engaging herself in martial arts, specifically taekwondo, during her free time. She competed in a taekwondo tournament hosted by Pinoy Taekwondo Center and was placed as a gold medalist in Kyorugi (sparring) and Poomsae (forms). She believes that every moment shared should be cherished because all of those will become memories.</p>
+			</div>
+		</div>
+		
+		<div class="researcher">
+            <img src="researcher6.jpg" alt="Researcher 6">
+            <div class="researcher-info">
+            <h2>Leslie Divine R. Mararac</h2>
+            <p>Student Researcher</p>
+            <p>Leslie Divine R. Mararac was born on October 10, 2007, in Pasig City, Philippines. She has received academic awards throughout the majority of her years at Philippine School Doha, starting from her primary education. Currently a senior specializing in STEM (Science, Technology, Engineering, and Mathematics). She participates in  activities, significantly contributing her talents to organizations such as PSD Hiyaw Chorale, Senior Guides Core Group, and C.A.T. (Citizenship Advancement Training). She believes that every life has a purpose, meaning, and the power to make a difference.</p>
+			</div>
+		</div>
+		
+		<div class="researcher">
+            <img src="researcher7.jpg" alt="Researcher 7">
+            <div class="researcher-info">
+            <h2>Reiji Rommel D. Catalan</h2>
+            <p>Student Researcher</p>
+            <p>Reiji Rommel D. Catalan is a Senior High School student in Philippine School Doha currently enrolled in the  STEM (Science, Technology, Engineering, and Mathematics)  strand. He was born on  September 13, 2007, and has been a consistent academic awardee throughout his time in school. He is an active DUNONG Academic Guild member and even became a finalist in the PICE (Philippine Institute of Civil Engineers) competition. He aspires to pursue the field of medicine, particularly cardiology in order to further deepen his knowledge and skill sets in life. He believes that the person you are destined to become is the person you decide to be.</p>
+			</div>
+		</div>
+
+    </div>
+	<br>
+	<br>
+	<footer>
+        <p>All Rights Reserved.</p>
+        <p>&copy; 2024 Water Quality Management System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sensor Data</title>
+    <style>
+        body {
+            background-color: #E0F7FA; /* Light pastel blue background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        h1 {
+            color: #01579B; /* Dark blue text color */
+            font-size: 24px;
+            font-family: Tahoma, sans-serif;
+            margin: 0;
+            padding: 30px 0 10px 0;
+        }
+
+        h2 {
+            color: white; /* Slightly lighter dark blue */
+            font-size: 45px;
+            font-family: Tahoma, sans-serif;
+            margin-bottom: 20px;
+            margin-top: 90px;
+            display: block;
+            background-color: #0288D1;
+        }
+
+        p {
+            color: #1A5276;
+        }
+
+        .button-container {
+            background-color: #B3E5FC; /* Light blue background */
+            border: 2px solid #81D4FA; /* Light blue border */
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 5px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px; 
+            font-size: 16px;
+            font-family: Verdana, sans-serif;
+            cursor: pointer;
+            text-decoration: none;
+            color: white;
+            background-color: #0288D1; /* Medium blue background */
+            border: none;
+            border-radius: 5px;
+            position: relative;
+            display: inline-block; 
+        }
+
+        .button:hover {
+            background-color: #0277BD; /* Darker blue on hover */
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #E1F5FE; /* Very light blue background */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            text-align: left;
+        }
+
+        .dropdown-content a {
+            color: #01579B; /* Dark blue text */
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #B3E5FC; /* Light blue on hover */
+        }
+
+        .button:hover .dropdown-content {
+            display: block;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        .container {
+            max-width: 900px;
+            height: 467px;
+            margin: 0 auto;
+            background-color: #FFFFFF; 
+            padding: 50px;
+            border: 1px solid #81D4FA; 
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            flex-direction: column; 
+            justify-content: center;
+            align-items: left; 
+            text-align: center; 
+        }
+
+        footer {
+            background-color: #B3E5FC; /* Light blue background */
+            padding: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>The Utilization of Date (Phoenix dactylifera) Pits and Raspberry Pi Pico in Making a Water Quality Management Device</h1>
+
+    <div class="section button-container">
+        <a href="homepage.html" class="button">Home</a>
+        <a href="about_us.html" class="button">About Us</a>
+        <div class="button">
+            Research
+            <div class="dropdown-content">
+                <a href="introduction.html">Introduction</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="results.html">Results</a>
+                <a href="discussion.html">Discussion</a>
+            </div>
+        </div>
+        <div class="button">
+            Device Data
+            <div class="dropdown-content">
+                <a href="index.html">Real-Time Sensor Data</a>
+                <a href="full_data.html">Data Log</a>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <h2>Real-Time Sensor Data</h2>
+        <p style='font-size:30px'>pH: <span id="ph">Loading...</span></p>
+        <p style='font-size:30px'>Turbidity: <span id="turbidity">Loading...</span></p>
+        <p style='font-size:30px'>TDS: <span id="tds">Loading...</span></p>
+        <p id="timestamp" style='font-size:20px'>As of: Loading...</p>
+    </div>
+    <br><br>
+    <footer>
+        <p>All Rights Reserved.</p>
+        <p>&copy; 2024 Water Quality Management System</p>
+    </footer>
+
+    <script>
+        async function fetchSensorData() {
+            try {
+                const response = await fetch('http://<Raspberry_Pi_IP>/');
+                const data = await response.json();
+                document.getElementById('ph').textContent = data.ph.toFixed(2);
+                document.getElementById('turbidity').textContent = data.turbidity.toFixed(2);
+                document.getElementById('tds').textContent = data.tds.toFixed(2);
+
+                // Update timestamp
+                const now = new Date();
+                const formattedDate = now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                const formattedTime = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+                document.getElementById('timestamp').textContent = `As of: ${formattedDate} ${formattedTime}`;
+            } catch (error) {
+                console.error('Error fetching sensor data:', error);
+            }
+        }
+
+        function goToFullData() {
+            window.location.href = "full_data.html";
+        }
+
+        function goToHomePage() {
+            window.location.href = "homepage.html";
+        }
+
+        setInterval(fetchSensorData, 2000);
+    </script>
+</body>
+</html>
